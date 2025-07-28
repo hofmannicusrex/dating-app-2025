@@ -1,0 +1,21 @@
+<div class="card bg-base-100 w-1/2 mx-auto p-10 mt-10 shadow-xl">
+    <h3 class="text-3xl text-red-500">{{title()}}</h3>
+
+    <ul class="list">
+    @for (member of members(); track member.id) {
+        <li class="list-row items-center">
+            <img src="/user.png" alt="user avatar" class="size-12 rounded-box">
+            <div>{{member.displayName}}</div>
+        </li>
+    }
+    </ul>
+</div>
+
+<!-- <button class="btn btn-neutral">Neutral</button>
+<button class="btn btn-primary">Primary</button>
+<button class="btn btn-secondary">Secondary</button>
+<button class="btn btn-accent">Accent</button>
+<button class="btn btn-info">Info</button>
+<button class="btn btn-success">Success</button>
+<button class="btn btn-warning">Warning</button>
+<button class="btn btn-error">Error</button> -->
