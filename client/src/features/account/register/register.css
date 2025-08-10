@@ -1,0 +1,4 @@
+/* This used to be what you had to do to get certain components to take up the entire width of their containing element. Now, you can just use classes on the component element in the html file. */
+/* :host {
+    width: 100%;  
+} */
