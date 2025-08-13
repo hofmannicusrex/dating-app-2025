@@ -1,6 +1,7 @@
 using System.Text;
 using API.Data;
 using API.Interfaces;
+using API.Middleware;
 using API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -34,8 +35,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 // builder.Services.AddOpenApi();  // We will not be using this in this course.  -Nick
 
 var app = builder.Build();
-
+app.UseMiddleware<ExceptionMiddleware>();
 // Configure the HTTP request pipeline.
+
 app.UseCors(options => options.AllowAnyHeader()
                               .AllowAnyMethod()
                               .WithOrigins("http://localhost:4200", "https://localhost:4200"));
